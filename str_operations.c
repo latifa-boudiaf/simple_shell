@@ -21,12 +21,12 @@ void str_copy(char *dest, const char *src)
 }
 
 /**
- * strlen - Calculates the length of a string.
+ * str_length - Calculates the length of a string.
  *
  * @str: Pointer to the input string.
  * @return: Length of the string.
  */
-int strlen(char *c)
+int str_length(char *c)
 {
         int length = 0;
 

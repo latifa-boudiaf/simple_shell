@@ -27,7 +27,7 @@ void get_no_space_str(char **argv, char **params, char *token)
 		if (!spaces)
 		{
 			k = 0;
-			argv[argv_id] = malloc(str_len(params[i]) + 1);
+			argv[argv_id] = malloc(str_length(params[i]) + 1);
 			for (j = 0; params[i][j]; j++)
 			{
 				if (params[i][j] != ' ' && params[i][j] != '\t')

@@ -48,7 +48,7 @@ void processUserInput(char **cmdline, char *argv)
 
 	for (j = 0; j < i - 1 ; j++)
 	{
-		tags[j] = malloc(_strlen(cmdTokens[j + 1]) + 1);
+		tags[j] = malloc(str_length(cmdTokens[j + 1]) + 1);
 		str_copy(tags[j], cmdTokens[j + 1]);
 	}
 
@@ -109,7 +109,7 @@ char **tokenize_cmdline(char *cmdline)
 	i = 0;
 	while (oneToken != NULL)
 	{
-		toks[i] = malloc(_str_length(oneToken) + 1);
+		toks[i] = malloc(str_length(oneToken) + 1);
 
 		if (toks[i] == NULL)
 		{
@@ -170,7 +170,7 @@ void executeCommand(char *path, char **tokens, char *argv, int *status)
 		return;
 	}
 
-	tmpPath = (char *)malloc(strlen(path) + 1);
+	tmpPath = (char *)malloc(str_length(path) + 1);
 	str_copy(tmpPath, path);
 
 	if (access(path, F_OK) == 0)

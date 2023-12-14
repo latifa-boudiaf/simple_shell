@@ -19,8 +19,8 @@ char *path(char *argv)
 
 		if (str_compare(first_token, "PATH=") == 0)
 		{
-			pv = malloc(sizeof(char) * (strlen(env[i]) - 4));
-			pv_cp = malloc(sizeof(char) * (strlen(env[i]) - 4));
+			pv = malloc(sizeof(char) * (str_length(env[i]) - 4));
+			pv_cp = malloc(sizeof(char) * (str_length(env[i]) - 4));
 			if (pv_cp == NULL)
 			{
 				free(pv);
@@ -56,7 +56,7 @@ char *token_d(char *pv_cp, char *argv, char *pv)
 	path_dir = strtok(pv_cp, ":;");
 	while (path_dir != NULL)
 	{
-		exe_path = malloc(str_len(path_dir) + str_len(argv) + 2);
+		exe_path = malloc(str_length(path_dir) + str_length(argv) + 2);
 		if (exe_path == NULL)
 		{
 			free(pv);
