@@ -8,6 +8,8 @@
 #include <stdbool.h>
 #include <sys/wait.h>
 
+extern char **environ;
+
 void cmdline_t(char *token, const char *path, char **params);
 int empty_line(char *cmdline);
 void get_no_space_str(char **argv, char **params, char *token);
@@ -21,5 +23,9 @@ int str_to_int(const char *str);
 char *path(char *argv);
 char *token_d(char *pv_cp, char *argv, char *pv);
 void cmdline_t(char *token, const char *path, char **params);
+void processUserInput(char **cmdline, char *argv);
+char **tokenize_cmdline(char *cmdline);
+void executeCommand(char *path, char **tokens, char *argv, int *status);
+void deallocateDblPointer(char **dblpointer, int len);
 
 #endif

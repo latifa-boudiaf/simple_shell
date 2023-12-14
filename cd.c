@@ -23,7 +23,7 @@ void c_dir(char **params, char *argv)
 
 	else if (i == 2)
 	{
-		if (str_cmp(params[1], "-") == 0)
+		if (str_compare(params[1], "-") == 0)
 		{
 			if (chdir("/root") == -1)
 				perror(params[1]);
@@ -35,7 +35,7 @@ void c_dir(char **params, char *argv)
 		{
 			if (access(params[1], F_OK) != 0)
 			{
-				not_existing_dir(argv, params[1]);
+				dir_not_exist(argv, params[1]);
 				return;
 			}
 
@@ -49,7 +49,7 @@ void c_dir(char **params, char *argv)
 		{
 			if (getcwd(buffer, sizeof(buffer)) != NULL)
 			{
-				get_absolute_path(params[1], buffer);
+				abs_path(params[1], buffer);
 			}
 
 			else
@@ -80,7 +80,7 @@ void abs_path(char *relative_path, char *current_working_dir)
 
 	for (j = 0 ; relative_path[j] ; j++)
 	{
-		new_dir[i + j + 1] = relative_path[j];
+		new_directory[i + j + 1] = relative_path[j];
 	}
 	new_directory[i + j + 1] = '\0';
 	if (chdir(new_directory) == -1)
