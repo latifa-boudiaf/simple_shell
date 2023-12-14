@@ -6,7 +6,6 @@
  * @argv: An array of pointers to the command-line arguments
  * Return: 0 (Success)
  */
-
 int main(int argc, char *argv[])
 {
 	char *line = NULL;
