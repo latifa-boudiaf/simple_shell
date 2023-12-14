@@ -82,7 +82,7 @@ char **tokenize_cmdline(char *cmdline)
 	int j;
 
 	i = 0;
-	input = malloc(sizeof(char) * (strlen(cmdline)));
+	input = malloc(sizeof(char) * (str_length(cmdline)));
 
 	if (input == NULL)
 		return (NULL);
@@ -109,7 +109,7 @@ char **tokenize_cmdline(char *cmdline)
 	i = 0;
 	while (oneToken != NULL)
 	{
-		toks[i] = malloc(_strlen(oneToken) + 1);
+		toks[i] = malloc(_str_length(oneToken) + 1);
 
 		if (toks[i] == NULL)
 		{
@@ -159,8 +159,8 @@ void executeCommand(char *path, char **tokens, char *argv, int *status)
 		fullPath =  path(path);
 		if (fullPath == NULL)
 		{
-			print_error("1: ", argv);
-			write(STDERR_FILENO, path, strlen(path));
+			error("1: ", argv);
+			write(STDERR_FILENO, path, str_length(path));
 			write(STDERR_FILENO, ": not found\n", 12);
 			free(fullPath);
 			*status = 127;

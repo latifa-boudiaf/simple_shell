@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * strlen- returns the lenght of a string.
+ * str_length- returns the lenght of a string.
  * @c: the pointer to the first character of the string.
  * Return: length of the given string
  */
 
-int strlen(char *c)
+int str_length(char *c)
 {
 	int i;
 

@@ -14,6 +14,10 @@ void cmdline_t(char *token, const char *path, char **params);
 int empty_line(char *cmdline);
 void get_no_space_str(char **argv, char **params, char *token);
 
+void error(char *msg, char *argv);
+void abs_path(char *relative_path, char *current_working_dir);
+void c_dir(char **params, char *argv);
+void abs_path(char *relative_path, char *current_working_dir);
 char *_str_concat(char *s1, char *s2);
 void str_copy(char *dest, const char *src);
 int str_compare(const char *s1, const char *s2);

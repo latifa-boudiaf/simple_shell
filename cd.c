@@ -71,7 +71,7 @@ void abs_path(char *relative_path, char *current_working_dir)
 	char *new_directory;
 	int i, j;
 
-	new_directory = malloc(sizeof(char) * (strlen(current_working_dir) + strlen(relative_path + 1)));
+	new_directory = malloc(sizeof(char) * (strlen(current_working_dir) + str_length(relative_path + 1)));
 	for (i = 0; current_working_dir[i] ; i++)
 	{
 		new_directory[i] = current_working_dir[i];

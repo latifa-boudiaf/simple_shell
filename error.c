@@ -22,6 +22,6 @@ void error(char *msg, char *argv)
 void dir_not_exist(char *argv, char *dir)
 {
 	error("1: cd: can't cd to ", argv);
-	write(STDERR_FILENO, dir, str_len(dir));
+	write(STDERR_FILENO, dir, str_length(dir));
 	write(STDERR_FILENO, "\n", 1);
 }

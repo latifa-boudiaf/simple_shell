@@ -30,7 +30,7 @@ int exit_sh(char **params, char *argv)
 		status = str_to_int(params[0]);
 		if (status < 0)
 		{
-			print_error("1: exit: Illegal number: ", argv);
+			error("1: exit: Illegal number: ", argv);
 			write(STDERR_FILENO, params[0], strlen(params[0]));
 			write(STDERR_FILENO, "\n", 1);
 			return (2);
