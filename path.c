@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
- * path - function that searches for the executable path of a command
+ * _path - function that searches for the executable path of a command
  * @argv: The command to search for.
  * Return: The path to the executable, or NULL if not found.
  */
-char *path(char *argv)
+char *_path(char *argv)
 {
 	char **env = environ;
 	char *exe_path = NULL, first_token[6];

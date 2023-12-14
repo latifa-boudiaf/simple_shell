@@ -120,7 +120,7 @@ char **tokenize_cmdline(char *cmdline)
 			return (NULL);
 		}
 
-		str_copy(tokens[i], oneToken);
+		str_copy(toks[i], oneToken);
 
 		oneToken = strtok(NULL, " \t");
 		i++;
@@ -156,7 +156,7 @@ void executeCommand(char *path, char **tokens, char *argv, int *status)
 	}
 	if (path[0] != '/')
 	{
-		fullPath =  path(path);
+		fullPath = _path(path);
 		if (fullPath == NULL)
 		{
 			error("1: ", argv);
@@ -177,10 +177,10 @@ void executeCommand(char *path, char **tokens, char *argv, int *status)
 	{
 		getCmd = strtok(path, "/");
 
-		while (getcmd != NULL)
+		while (getCmd != NULL)
 		{
-			cmdline = getcmd;
-			getcmd = strtok(NULL, "/");
+			cmdline = getCmd;
+			getCmd = strtok(NULL, "/");
 		}
 
 		cmdline_t(cmdline, tmpPath, tokens);
