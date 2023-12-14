@@ -18,6 +18,4 @@ A basic implementation of a shell in C. This simple shell can execute commands e
 
 Compile the shell program using the provided `Makefile`:
 
-```bash
-make
 
